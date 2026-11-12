@@ -1,6 +1,22 @@
-# PurrStudy
+# 🐱 PurrStudy
 
-Aplicação React + Vite para foco de estudos, com Pomodoro, cronômetro livre, notificações do navegador, login Google via Firebase Authentication e histórico diário no Cloud Firestore.
+o **PurrStudy** é uma aplicação web desenvolvida para ajudar estudantes a organizarem seus momentos de estudo, manterem a concentração e acompanharem sua evolução ao longo do tempo.
+
+com uma interface intuitiva, o projeto reúne ferramentas de produtividade em um só lugar, oferecendo uma experiência simples e agradável para quem deseja criar uma rotina de estudos mais consistente.
+
+a aplicação conta com temporizador Pomodoro, cronômetro livre, notificações do navegador e histórico de estudos sincronizado com a conta do usuário.
+
+## 🐾 Funcionalidades
+
+- **Temporizador Pomodoro:** utilize ciclos de concentração e descanso para organizar seus estudos e manter o foco.
+- **Cronômetro livre:** acompanhe seu tempo de estudo sem duração predefinida, com a possibilidade de finalizar e registrar suas sessões manualmente.
+- **Notificações:** receba avisos do navegador relacionados ao temporizador, mediante autorização.
+- **Histórico de estudos:** acompanhe o tempo total estudado e a quantidade de sessões concluídas em cada dia.
+- **Autenticação com Google:** entre com sua conta Google para acessar seus dados pessoais.
+- **Sincronização na nuvem:** seus registros de estudo são armazenados no Cloud Firestore e associados à sua conta.
+- **Progressive Web App (PWA):** instale o PurrStudy em dispositivos compatíveis e acesse a aplicação como um aplicativo. (em alguns navegadores não aparece para instalar automaticamente, basta clicar nos 3 pontinhos que vai encontrar para instalar ele)
+- **Interface intuitiva:** experiência visual leve e acolhedora, pensada para tornar os momentos de estudo mais agradáveis.
+
 
 ## Requisitos
 - Node.js 20+
@@ -31,15 +47,6 @@ Preencha `.env.local` com as credenciais de configuração do app Web Firebase. 
 ## Segurança e comportamento
 - O login Google usa `signInWithPopup` e `onAuthStateChanged`; o app não guarda tokens manualmente.
 - O histórico fica em `usuarios/{uid}/historico_estudos/{YYYY-MM-DD}`. As regras restringem o acesso ao UID autenticado.
-- As credenciais `VITE_*` são configuração pública do cliente, não segredos. A segurança depende das regras do Firestore e da configuração do Auth.
 - O total diário é incrementado apenas quando uma sessão Pomodoro completa. No cronômetro livre, o usuário pode finalizar uma sessão manualmente para registrá-la.
-- A data do documento é calculada no fuso local do navegador, evitando o desvio de data que pode ocorrer com `toISOString()` perto da meia-noite.
 - A Web Notifications API exige permissão explícita e normalmente contexto seguro (HTTPS ou localhost). O app pede permissão somente quando o usuário clicar no botão de ativação.
 - O navegador pode suspender timers em abas em segundo plano; a contagem usa timestamps para reduzir deriva.
-- Para produção, considere App Check, monitoramento de erros, testes das regras com Firebase Emulator Suite e política de privacidade.
-
-## Estrutura
-- `src/firebase.js`: inicialização segura e Auth/Firestore.
-- `src/services/studyHistory.js`: gravação/leitura do histórico.
-- `src/components/`: cabeçalho, temporizador e histórico.
-- `firestore.rules`: isolamento dos dados por usuário.
