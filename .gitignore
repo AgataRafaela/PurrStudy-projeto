@@ -1,0 +1,68 @@
+# ==============================
+# Dependências
+# ==============================
+node_modules/
+
+# ==============================
+# Build e arquivos gerados
+# ==============================
+dist/
+build/
+coverage/
+
+# ==============================
+# Variáveis de ambiente
+# ==============================
+.env
+.env.*
+!.env.example
+
+# ==============================
+# Firebase - arquivos locais e logs
+# ==============================
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+*.log
+
+# Chaves privadas e contas de serviço
+serviceAccount*.json
+*-service-account*.json
+firebase-adminsdk*.json
+*private-key*.json
+*.pem
+*.key
+*.p12
+
+# ==============================
+# Vercel
+# ==============================
+.vercel/
+
+# ==============================
+# Sistema operacional
+# ==============================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Desktop.ini
+
+# ==============================
+# Editores e IDEs
+# ==============================
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# ==============================
+# Arquivos temporários
+# ==============================
+*.tmp
+*.temp
+*.swp
+*.swo
