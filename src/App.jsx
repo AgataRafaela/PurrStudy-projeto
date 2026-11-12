@@ -9,6 +9,9 @@ import Header from './components/Header.jsx';
 import Timer from './components/Timer.jsx';
 import History from './components/History.jsx';
 import './styles.css';
+import imagemPomodoro from './assets/purrstudy-pomodoro.png';
+import imagemCronometroLivre from './assets/purrstudy-cronometrolivre.png';
+import imagemCafe from './assets/cafe.png';
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -61,12 +64,12 @@ export default function App() {
     {!firebaseConfigured && <div className="config-banner"><ShieldCheck size={18}/><span><b>Modo de demonstração:</b> configure as variáveis Firebase em <code>.env.local</code> para ativar login e histórico.</span></div>}
     {page === 'home' && <main className="home-page">
       <section className="hero-copy"><div className="eyebrow"><Sparkles size={15}/> UM RESPIRO NA ROTINA</div><h1>Olá, estudante! <span className="paw">✿</span><br/>Vamos focar um pouquinho?</h1><p>Escolha seu jeitinho de estudar hoje. Prepare um cantinho confortável, respire fundo e vamos nessa.</p>
-        <div className="hero-note"><div className="image-placeholder hero-cat"><img src="src/assets/cafe.png" alt="desenho de uma xicara de café" /></div><div><b>Seu ritmo, suas conquistas.</b><small>Não precisa ser perfeito. Só precisa começar. ♡</small></div></div>
+        <div className="hero-note"><div className="image-placeholder hero-cat"><img src={imagemCafe} alt="Desenho de uma xícara de café"/></div><div><b>Seu ritmo, suas conquistas.</b><small>Não precisa ser perfeito. Só precisa começar. ♡</small></div></div>
       </section>
       <section className="method-section"><div className="section-title"><span>✦</span><div><h2>Como você quer estudar?</h2><p>Escolha um método para começar</p></div></div>
         <div className="method-grid">
-          <button className="method-card pomodoro-card" onClick={() => chooseMode('pomodoro')}><div className="method-art image-placeholder"><img src="src/assets/purrstudy-pomodoro.png" alt="Desenho de um gato dormindo em cima de livros ao lado de um cronometro" /></div><div className="method-copy"><span className="method-kicker">FOCO COM PAUSAS</span><h3>Método Pomodoro</h3><p>Estude em blocos de 25 minutos com pausas curtas para recarregar a energia.</p><span className="method-link">Começar a focar <ArrowRight size={17}/></span></div></button>
-          <button className="method-card free-card" onClick={() => chooseMode('free')}><div className="method-art image-placeholder"><img src="src/assets/purrstudy-cronometrolivre.png" alt="" /></div><div className="method-copy"><span className="method-kicker">NO SEU TEMPO</span><h3>Cronômetro livre</h3><p>Defina sua própria meta e estude no ritmo que combina com você.</p><span className="method-link">Escolher meu tempo <ArrowRight size={17}/></span></div></button>
+          <button className="method-card pomodoro-card" onClick={() => chooseMode('pomodoro')}><div className="method-art image-placeholder"><img src={imagemPomodoro} alt="Desenho de um gato dormindo em cima de livros ao lado de um cronômetro"/></div><div className="method-copy"><span className="method-kicker">FOCO COM PAUSAS</span><h3>Método Pomodoro</h3><p>Estude em blocos de 25 minutos com pausas curtas para recarregar a energia.</p><span className="method-link">Começar a focar <ArrowRight size={17}/></span></div></button>
+          <button className="method-card free-card" onClick={() => chooseMode('free')}><div className="method-art image-placeholder"><img src={imagemCronometroLivre} alt="Ilustração de um gatinho dormindo em cima de um caderno"/></div><div className="method-copy"><span className="method-kicker">NO SEU TEMPO</span><h3>Cronômetro livre</h3><p>Defina sua própria meta e estude no ritmo que combina com você.</p><span className="method-link">Escolher meu tempo <ArrowRight size={17}/></span></div></button>
         </div>
         <div className="gentle-tip"><div className="tip-icon"><Leaf size={19}/></div><p><b>Uma dica carinhosa</b><br/>Deixe o celular de lado, separe seu café e comemore cada pequeno avanço</p><span>♡</span></div>
       </section>
