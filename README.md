@@ -50,3 +50,5 @@ Preencha `.env.local` com as credenciais de configuração do app Web Firebase. 
 - O total diário é incrementado apenas quando uma sessão Pomodoro completa. No cronômetro livre, o usuário pode finalizar uma sessão manualmente para registrá-la.
 - A Web Notifications API exige permissão explícita e normalmente contexto seguro (HTTPS ou localhost). O app pede permissão somente quando o usuário clicar no botão de ativação.
 - O navegador pode suspender timers em abas em segundo plano; a contagem usa timestamps para reduzir deriva.
+
+<img width="1349" height="767" alt="Captura de tela 2026-11-13 113118" src="https://github.com/user-attachments/assets/5e1014a7-a4ff-4940-b181-efe90de6059e" />
